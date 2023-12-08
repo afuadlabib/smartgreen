@@ -1,11 +1,13 @@
 package com.smartgreen.course.auth;
 
+import jakarta.json.bind.annotation.JsonbNillable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 
 import java.io.*;
@@ -19,6 +21,7 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
+    @JsonbNillable
     private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -30,6 +33,13 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.role = role;
+    }
+    @PrePersist
+    public void encryptPassword(){
+        // to hashing before persist with Encript
+        int intPass = password.hashCode();
+        // created hash
+        password =  intPass +"";
     }
     public Long getId() {
         return id;
