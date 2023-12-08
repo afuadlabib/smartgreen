@@ -19,6 +19,10 @@
 		<compiler-plugin.version>3.11.0</compiler-plugin.version>
 		<war-plugin.version>3.3.2</war-plugin.version>
 		<wildfly-plugin.version>4.1.0.Final</wildfly-plugin.version>
+		<hibernate.version>6.4.0.Final</hibernate.version>
+		<jboss-logging.version>3.5.3.Final</jboss-logging.version>
+		<h2database.version>2.2.224</h2database.version>
+		<postgresql.version>42.7.0</postgresql.version>
 	</properties>
 
 	<dependencies>
@@ -28,6 +32,29 @@
 			<version>${jakartaee-api.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>${jboss-logging.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
+		<dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+			<type>pom</type>
+        </dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2database.version}</version>
+			<scope>test</scope>
+		</dependency>
+	
 	</dependencies>
 
 	<build>
