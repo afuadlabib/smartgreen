@@ -54,8 +54,8 @@
 			<version>${h2database.version}</version>
 			<scope>test</scope>
 		</dependency>
-	
-	</dependencies>
+		
+ </dependencies>
 
 	<build>
 		<finalName>smartgreen</finalName>
