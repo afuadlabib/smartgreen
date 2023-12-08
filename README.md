@@ -23,3 +23,10 @@ docker run -it --rm -p 8080:8080 jakartaee-hello-world:v1
 ```
 
 Once the runtime starts, you can access the project at http://localhost:8080/jakartaee-hello-world.
+
+# Speak Jakarta EE 
+### - Jakarta EE Platform
+### - EJB
+### - Hibernate
+### - PostgreSql and JNDI 
+### - Wildfly Server / JBoss AS
